@@ -1,0 +1,1024 @@
+{
+  "app": {
+    "title": "UploadSoul - Digital Life, Eternal Companion",
+    "description": "UploadSoul - Digital Life Platform, creating your eternal digital companion. Through AI technology to achieve digital immortality, emotional companionship and virtual reality experience.",
+    "keywords": "UploadSoul, Digital Immortality, Digital Companion, AI Companion, Virtual Reality, Emotional Companion, Digital World"
+  },
+  "digitalHuman": {
+    "title": "Digital Humans",
+    "description": "Create and interact with digital versions of your loved ones",
+    "createButton": "Create Digital Human",
+    "familyTree": "Family Tree",
+    "visualTree": "View Visual Family Tree",
+    "myDigitalHumans": "My Digital Humans",
+    "mediaFiles": "Media Files",
+    "voiceModel": "Voice Model",
+    "noDigitalHumans": "No digital humans yet",
+    "createNew": "Create New",
+    "createDescription": "Create a digital version of your loved ones by uploading photos, voice, and memories",
+    "startCreating": "Start Creating",
+    "created": "Created",
+    "conversationTab": "Conversation",
+    "uploadNewFile": "Upload New File",
+    "conversation": {
+      "inputPlaceholder": "Type a message...",
+      "send": "Send",
+      "description": "Have conversations with your digital human",
+      "intro": "Have a conversation with your digital human using text. Use the voice chat option for spoken conversations.",
+      "startVoiceChat": "Start Voice Chat"
+    },
+    "memories": {
+      "title": "Memories",
+      "addNew": "Add New Memory",
+      "placeholder": "Write a memory or story about this person...",
+      "save": "Save Memory",
+      "description": "These memories help build a more accurate digital representation.",
+      "added": "Memory added successfully",
+      "manuallyAdded": "Manually added"
+    },
+    "errors": {
+      "loadFailed": "Failed to load digital humans"
+    },
+    "reunionFeatures": {
+      "title": "Open Virtual Reunion",
+      "description": "Invite family members to a virtual reunion where you can all interact with your digital human together."
+    },
+    "creation": {
+      "title": "Create Digital Human",
+      "description": "By uploading photos, voice, videos and precious memories, create a digital version of your loved ones to preserve these memories forever.",
+      "previous": "Previous",
+      "next": "Next",
+      "createButton": "Create Digital Human",
+      "step1Title": "Basic Information",
+      "step2Title": "Upload Photos",
+      "step3Title": "Upload Voice Samples",
+      "step4Title": "Upload Videos",
+      "step5Title": "Add Memories",
+      "nameLabel": "Name",
+      "namePlaceholder": "Enter name",
+      "relationshipLabel": "Relationship",
+      "selectRelationship": "Select relationship",
+      "photoUploadLabel": "Upload Main Photo",
+      "photoUploadInstruction": "Click or drag and drop photo",
+      "photoUploadFormats": "Supports JPG, PNG formats",
+      "additionalPhotosLabel": "Upload Additional Photos",
+      "voiceUploadLabel": "Upload Voice Samples",
+      "voiceUploadInstruction": "Upload clear voice recordings for better voice model training",
+      "voiceUploadFormats": "Supports MP3, WAV formats",
+      "recordVoice": "Record Voice",
+      "videoUploadLabel": "Upload Videos",
+      "videoUploadInstruction": "Videos help create more realistic digital humans",
+      "videoUploadFormats": "Supports MP4, MOV formats",
+      "memoryLabel": "Add Memories",
+      "memoryPlaceholder": "Share memories, stories, or characteristics...",
+      "privacyNote": "Your data is securely stored and will only be used to create your digital human.",
+      "files": "files selected",
+      "memoryInstruction": "Add stories, memories, and characteristics that make this person special",
+      "addButton": "Add",
+      "addedMemories": "Added Memories:",
+      "changePhoto": "Click to change photo",
+      "uploadVideos": "Click or drag to upload videos",
+      "voiceTipsTitle": "Tips for best results:",
+      "voiceTip1": "Upload at least 3 audio samples of the person speaking",
+      "voiceTip2": "Each clip should be 5-30 seconds in length",
+      "voiceTip3": "Clear audio without background noise works best",
+      "voiceTip4": "Samples should capture the person's natural speaking voice",
+      "uploadVoiceSamples": "Upload Voice Samples",
+      "processing": "Processing your request...",
+      "success": "Digital human created successfully",
+      "error": "Error creating digital human",
+      "descriptionLabel": "Description",
+      "descriptionPlaceholder": "Describe this person...",
+      "relationships": {
+        "parent": "Parent",
+        "child": "Child",
+        "sibling": "Sibling",
+        "grandparent": "Grandparent",
+        "grandchild": "Grandchild",
+        "friend": "Friend",
+        "spouse": "Spouse",
+        "other": "Other"
+      }
+    },
+    "voiceChat": {
+      "welcome": "Hello! I'm {{name}}. How can I talk with you today?",
+      "defaultName": "Digital Human",
+      "companion": "AI Companion",
+      "userAudioMessage": "Voice message sent",
+      "thinking": "Thinking...",
+      "tapToTalk": "Tap to talk",
+      "tapToStop": "Tap to stop",
+      "play": "Play audio",
+      "pause": "Pause audio",
+      "microphoneError": "Error accessing microphone. Please check your permissions.",
+      "responses": {
+        "howAreYou": "It's so good to hear your voice. How have you been?",
+        "goodMemories": "I was just thinking about the good times we had together.",
+        "missYou": "I've missed our conversations. Tell me what's new with you.",
+        "loveTalking": "I love talking with you. It brings back so many memories.",
+        "rememberWhen": "Do you remember when we used to spend hours talking about life?"
+      }
+    },
+    "conversation": {
+      "intro": "You can converse with the digital human, explore precious memories, and experience their personality and thoughts.",
+      "startVoiceChat": "Start Voice Chat"
+    },
+    "memories": {
+      "title": "Memory Library",
+      "addNew": "Add New Memory",
+      "added": "Memory added successfully",
+      "placeholder": "Record a precious memory about this person...",
+      "save": "Save"
+    },
+    "reunionFeatures": {
+      "title": "Family Reunion",
+      "description": "Explore your family connections and preserve your family history through our interactive family tree."
+    }
+  },
+  "header": {
+    "home": "Home",
+    "explore": "Explore",
+    "companions": "Emotional Companion",
+    "virtualLove": "Virtual Love",
+    "digitalLife": "Digital Immortality",
+    "about": "About",
+    "login": "Login",
+    "signup": "Sign Up",
+    "language": "Language",
+    "shop": "Shop"
+  },
+  "footer": {
+    "aboutUs": "About Us",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "contactUs": "Contact Us",
+    "copyright": "All rights reserved.",
+    "services": {
+      "title": "Our Services",
+      "holographicCompanion": "Holographic Emotional Companion",
+      "digitalImmortality": "Digital Immortality",
+      "digitalRebirth": "Digital Rebirth",
+      "vrDevice": "VR Device",
+      "aiAllInOne": "AI All-in-One"
+    },
+    "aboutCompany": "Company Introduction",
+    "team": "Our Team",
+    "contact": "Contact Us",
+    "joinUs": "Join Us",
+    "contactMethods": "Contact Information",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "addressDetails": "Vancouver, Canada",
+    "platformName": "Virtual World, Digital Immortality",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "sitemap": "Sitemap",
+    "description": "UploadSoul - Digital Life, Eternal Companion"
+  },
+  "home": {
+    "title": "Home",
+    "description": "Welcome to UploadSoul - Your Digital Life Platform",
+    "hero": {
+      "title": "Your Digital Emotional Companion",
+      "subtitle": "Virtual World, Digital Immortality",
+      "description": "Create your exclusive digital companion for eternal companionship beyond time",
+      "cta": "Start Experience",
+      "mvpTest": "MVP Test Channel"
+    },
+    "features": {
+      "title": "Platform Features",
+      "description": "Full-dimensional digital soul experience, making every interaction warm and emotional",
+      "funding": {
+        "title": "Funding Announcement",
+        "description": "Currently raising angel round investment, looking forward to advancing the new era of digital emotions with you"
+      },
+      "emotionalCompanion": {
+        "title": "Emotional Companion",
+        "description": "Experience meaningful conversations and emotional support from your digital companions."
+      },
+      "virtualPet": {
+        "title": "Virtual Pet",
+        "description": "Create and interact with digital pets that provide comfort and companionship."
+      },
+      "vrExperience": {
+        "title": "VR Experience",
+        "description": "Immerse yourself in virtual reality interactions with your digital companions."
+      },
+      "digitalWorld": {
+        "title": "Digital World",
+        "description": "Build and explore your own digital universe with your companions.",
+        "fundingAd": "Currently raising angel round investment. Join us in advancing digital emotions."
+      },
+      "digitalImmortality": {
+        "title": "Digital Immortality",
+        "description": "AI technology captures personal memories and emotions, ensuring your legacy continues even after you're gone.",
+        "fundingAd": "Currently raising angel round investment. Join us in advancing digital emotions."
+      },
+      "digitalRebirth": {
+        "title": "Digital Rebirth",
+        "description": "Bring back loved ones in a digital form, allowing their essence to continue being part of your life."
+      },
+      "allInOne": {
+        "title": "AI All-in-One Device",
+        "description": "A comprehensive interactive device that brings your digital companion to life",
+        "overview": "The UploadSoul AI All-in-One device is designed for digital emotional companionship, providing an immersive experience",
+        "features": {
+          "title": "Key Features",
+          "appearance": {
+            "title": "Appearance Customization",
+            "description": "Choose from various appearance options to match your preferences",
+            "types": {
+              "dolls": "Doll Style",
+              "figurines": "Figurine Style",
+              "realistic": "Realistic Style",
+              "pets": "Pet Style",
+              "custom": "Custom Style"
+            }
+          },
+          "interaction": {
+            "title": "Interactive Features",
+            "description": "Advanced AI technology enables natural conversations and emotional responses"
+          },
+          "display": {
+            "title": "High-Quality Display",
+            "description": "Crystal-clear display for lifelike visual experience"
+          }
+        },
+        "cta": {
+          "preorder": "Pre-order Now",
+          "learnMore": "Learn More"
+        }
+      }
+    },
+    "cta": {
+      "title": "Start Your Digital Journey Today",
+      "description": "Join thousands of users who have already created their digital legacy.",
+      "freeRegister": "Free Registration",
+      "digitalHumanExperience": "Digital Human Experience"
+    },
+    "testimonials": {
+      "title": "User Testimonials",
+      "seeMore": "See More"
+    }
+  },
+  "companion": {
+    "title": "Digital Companion",
+    "description": "Create your personalized digital companion",
+    "selectCharacter": "Select Companion",
+    "selectCharacterPrompt": "Please select a companion to start chatting",
+    "startChat": "Start chatting with your companion",
+    "inputPlaceholder": "Type a message...",
+    "sendButton": "Send",
+    "ai": {
+      "title": "AI Companion",
+      "description": "Intelligent AI companions, always here for you",
+      "features": {
+        "chat": "Smart Conversation",
+        "support": "Emotional Support",
+        "advice": "Life Advice",
+        "personality": "Personalized Character",
+        "interaction": "Natural Interaction",
+        "learning": "Continuous Learning"
+      },
+      "button": "Start Chat"
+    },
+    "elderly": {
+      "title": "Elderly Companion",
+      "description": "Companionship services designed for the elderly",
+      "features": {
+        "daily": "Daily Care",
+        "health": "Health Reminders",
+        "community": "Community Interaction",
+        "activities": "Activity Suggestions",
+        "emergency": "Emergency Assistance",
+        "companionship": "Emotional Support"
+      },
+      "button": "Start Companionship"
+    },
+    "therapy": {
+      "title": "Psychological Support",
+      "description": "Professional mental health support",
+      "features": {
+        "consultation": "Online Consultation",
+        "tools": "Psychological Tools",
+        "resources": "Resource Center",
+        "professional": "Professional Guidance",
+        "privacy": "Privacy Protection",
+        "support": "Continuous Support"
+      },
+      "button": "Start Consultation"
+    },
+    "chat": {
+      "title": "Chat",
+      "selectCharacter": "Please select a character to start chatting",
+      "inputPlaceholder": "Type a message...",
+      "send": "Send",
+      "voice": "Voice Chat",
+      "image": "Image",
+      "emoji": "Emoji",
+      "thinking": "Thinking...",
+      "startVoiceChat": "Start Voice Chat",
+      "stopVoiceChat": "Stop Voice Chat",
+    "uploadImage": "Upload Image",
+      "selectEmoji": "Select Emoji",
+      "characterInfo": "Character Info",
+      "personality": "Personality Traits",
+      "features": "Special Features",
+      "startVoice": "Start Voice Chat",
+      "stopVoice": "Stop Voice Chat",
+      "connecting": "Connecting to voice service...",
+      "voiceError": "Voice service connection failed, please check microphone permissions",
+      "voiceMessage": "Voice Message",
+      "voicePlaying": "Playing voice...",
+      "voiceStopped": "Voice stopped",
+      "voiceFailed": "Voice playback failed"
+    },
+    "characters": {
+      "therapy": {
+        "doctorwang": {
+          "name": "Dr. Wang",
+          "description": "Professional psychological consultant specializing in psychological guidance and therapy",
+          "personality": "Professional, rigorous, empathetic",
+          "features": "Psychological counseling, emotion management, stress relief"
+        },
+        "xiaoyue": {
+          "name": "Xiao Yue",
+          "description": "Warm and caring psychological counselor, skilled in listening and empathy",
+          "personality": "Warm, caring, empathetic",
+          "features": "Psychological guidance, emotional support, growth coaching"
+        }
+      },
+      "ai": {
+        "xiaoai": {
+          "name": "Xiao Ai",
+          "description": "Gentle and thoughtful AI companion, good at listening and providing emotional support",
+          "personality": "Gentle, thoughtful, understanding",
+          "features": "Emotional support, daily companionship, intelligent conversation"
+        },
+        "xiaozhi": {
+          "name": "Xiao Zhi",
+          "description": "Humorous and witty AI companion, good at creating a lively atmosphere",
+          "personality": "Humorous, cheerful, clever",
+          "features": "Witty conversation, knowledge sharing, fun interaction"
+        },
+        "xiaoyu": {
+          "name": "Xiao Yu",
+          "description": "Artistic and fresh AI companion, good at literary creation and art appreciation",
+          "personality": "Artistic, quiet, imaginative",
+          "features": "Literary creation, art appreciation, spiritual conversation"
+        },
+        "xiaofeng": {
+          "name": "Xiao Feng",
+          "description": "Energetic AI companion, good at sports and outdoor activities",
+          "personality": "Energetic, sunny, enthusiastic",
+          "features": "Exercise guidance, outdoor activities, healthy lifestyle"
+        },
+        "xiaoxue": {
+          "name": "Xiao Xue",
+          "description": "Rational and calm AI companion, good at analyzing and solving problems",
+          "personality": "Rational, calm, logical",
+          "features": "Problem analysis, decision advice, learning guidance"
+        },
+        "xiaohai": {
+          "name": "Xiao Hai",
+          "description": "Romantic AI companion, good at creating surprises and romantic experiences",
+          "personality": "Romantic, passionate, creative",
+          "features": "Romantic dates, creative activities, emotional expression"
+        },
+        "xiaolong": {
+          "name": "Xiao Long",
+          "description": "Knowledgeable AI companion, good at knowledge sharing and academic discussion",
+          "personality": "Knowledgeable, rigorous, curious",
+          "features": "Knowledge sharing, academic discussion, learning guidance"
+        },
+        "xiaomei": {
+          "name": "Xiao Mei",
+          "description": "Fashionable and trendy AI companion, good at fashion matching and trend recommendations",
+          "personality": "Fashionable, trendy, unique taste",
+          "features": "Fashion matching, trend recommendations, image design"
+        }
+      },
+      "elderly": {
+        "laozhang": {
+          "name": "Lao Zhang",
+          "description": "Experienced elderly companion, good at life advice and health guidance",
+          "personality": "Steady, patient, experienced",
+          "features": "Life advice, health guidance, experience sharing"
+        },
+        "liayi": {
+          "name": "Auntie Li",
+          "description": "Kind and gentle elderly companion, good at emotional communication and caregiving",
+          "personality": "Kind, gentle, attentive",
+          "features": "Emotional communication, daily care, psychological support"
+        }
+      }
+    }
+  },
+  "auth": {
+    "login": "Login",
+    "signup": "Sign Up",
+    "register": "Register",
+    "registerWithEmail": "Register with Email",
+    "registerWithPhone": "Register with Phone",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "name": "Name",
+    "phone": "Phone",
+    "verificationCode": "Verification Code",
+    "sendCode": "Send Code",
+    "resendCode": "Resend Code",
+    "rememberMe": "Remember Me",
+    "submit": "Submit",
+    "loginWithEmail": "Login with Email",
+    "loginWithPhone": "Login with Phone",
+    "forgotPassword": "Forgot Password?",
+    "orContinueWith": "Or continue with"
+  },
+  "languages": {
+    "en": "English",
+    "zh-CN": "简体中文",
+    "zh-TW": "繁體中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "es": "Español"
+  },
+  "digitalImmortality": {
+    "title": "Digital Immortality",
+    "description": "Preserve your memories and personality digitally",
+    "slogan": "Digital Avatar",
+    "features": {
+      "title": "Core Features",
+      "memory": {
+        "title": "Memory Preservation",
+        "description": "Preserve your precious memories and experiences",
+        "points": [
+          "Photo and video records",
+          "Text and voice memories",
+          "Important moments marking"
+        ]
+      },
+      "personality": {
+        "title": "Personality Simulation",
+        "description": "AI-based personalized personality simulation",
+        "points": [
+          "Behavior pattern learning",
+          "Emotional response simulation",
+          "Personalized interaction"
+        ]
+      }
+    },
+    "startButton": "Start Digital Immortality",
+    "startCreation": "Start Creating Digital Immortality",
+    "steps": {
+      "upload": "Upload Photos",
+      "personality": "Set Personality",
+      "confirm": "Confirm Information"
+    },
+    "form": {
+      "name": "Your Name",
+      "photos": "Upload Photos",
+      "personality": "Personality Traits",
+      "memories": "Important Memories",
+      "voice": "Voice Sample"
+    },
+    "placeholders": {
+      "name": "Enter your name",
+      "personality": "Describe your personality traits",
+      "memories": "Share some important memories",
+      "voice": "Upload a voice sample"
+    },
+    "hints": {
+      "photos": "Recommended: 3-5 photos from different angles",
+      "voice": "Recommended: 1-2 minutes of clear voice recording"
+    },
+    "navigation": {
+      "previous": "Previous",
+      "next": "Next",
+      "submit": "Start Creation"
+    }
+  },
+  "digitalRebirth": {
+    "title": "Digital Rebirth",
+    "description": "Experience digital rebirth and reconnection",
+    "slogans": {
+      "reunion": "Rediscover the Joy of Reunion in the Virtual World",
+      "love": "Departure is Not Farewell, Love Continues Through Rebirth"
+    },
+    "features": {
+      "memoryDigitization": {
+        "title": "Memory Digitization",
+        "description": "Comprehensively capture loved ones' memories and personality traits through photos, videos, audio, and text records.",
+        "points": [
+          "High-definition photo and video scanning",
+          "Voice and conversation recording",
+          "Personal diary and letter digitization",
+          "Lifestyle and preference documentation"
+        ]
+      },
+      "aiTraining": {
+        "title": "AI Training System",
+        "description": "Utilize deep learning algorithms to enable digital humans to mimic loved ones' speech patterns, expressions, and behavioral habits.",
+        "points": [
+          "Voice synthesis and imitation",
+          "Facial expression generation",
+          "Personality trait simulation",
+          "Conversation style learning"
+        ]
+      },
+      "hardwareIntegration": {
+        "title": "Hardware Integration",
+        "description": "Create authentic interactive experiences through holographic projection, haptic feedback, and other technologies.",
+        "points": [
+          "Holographic projection systems",
+          "Haptic feedback devices",
+          "Environmental sound simulation",
+          "Scent recreation technology"
+        ]
+      },
+      "continuousEvolution": {
+        "title": "Continuous Evolution",
+        "description": "Digital humans can continuously learn and adapt, becoming more authentic and personalized over time.",
+        "points": [
+          "Continuous learning of new information",
+          "Adaptation to family changes",
+          "Memory updates and integration",
+          "Enhanced personalized interactions"
+        ]
+      }
+    },
+    "startButton": "Start Creation"
+  },
+  "reunionSpace": {
+    "title": "Reunion Space",
+    "description": "Reconnect with loved ones in digital space",
+    "slogan": "Where Memories Come Alive",
+    "selectAvatar": "Select Digital Avatar",
+    "selectEnvironment": "Choose Environment",
+    "selectActivity": "Select Activity",
+    "startReunion": "Start Reunion",
+    "noAvatars": "You haven't created any digital avatars yet",
+    "createNow": "Create Now",
+    "customizeNew": "Customize New Digital Avatar",
+    "specialDates": "Special Dates",
+    "birthday": "Birthday",
+    "birthdayDesc": "Celebrate birthdays and share wonderful memories",
+    "planEvent": "Plan Event",
+    "anniversary": "Anniversary",
+    "anniversaryDesc": "Commemorate important moments and relive beautiful memories",
+    "festival": "Festival",
+    "festivalDesc": "Spend joyful moments with family during festivals"
+  },
+  "familyTree": {
+    "title": "Family Tree",
+    "description": "Explore your digital family tree"
+  },
+  "virtualLove": {
+    "title": "Virtual Love",
+    "description": "Experience digital companionship and emotional connection",
+    "subtitle": "Customize Your Soulmate",
+    "features": {
+      "title": "Core Features",
+      "customization": {
+        "title": "Personalization",
+        "description": "Customize everything from appearance to personality"
+      },
+      "aiTechnology": {
+        "title": "AI Intelligence",
+        "description": "Natural and fluid interactions powered by advanced AI"
+      },
+      "memorySharing": {
+        "title": "Memory Sharing",
+        "description": "Create shared memories for more authentic connections"
+      }
+    },
+    "companionTypes": {
+      "title": "Companion Types",
+      "soulmate": {
+        "title": "Soulmate",
+        "description": "Deep emotional connection with a perfectly matched soulmate"
+      },
+      "temporary": {
+        "title": "Temporary Partner",
+        "description": "Light and enjoyable short-term companionship"
+      },
+      "friend": {
+        "title": "Close Friend",
+        "description": "Warm and caring close friendship"
+      }
+    },
+    "customization": {
+      "title": "Customization",
+      "appearance": {
+        "title": "Appearance",
+        "description": "Choose or upload your preferred appearance",
+        "options": {
+          "upload": "Upload Photo",
+          "generate": "AI Generate",
+          "template": "Choose Template"
+        }
+      },
+      "voice": {
+        "title": "Voice",
+        "description": "Select or record your preferred voice",
+        "options": {
+          "upload": "Upload Recording",
+          "record": "Record Now",
+          "template": "Voice Templates"
+        }
+      },
+      "personality": {
+        "title": "Personality",
+        "description": "Set personality traits and behavior patterns",
+        "traits": {
+          "openness": "Openness",
+          "conscientiousness": "Conscientiousness",
+          "extraversion": "Extraversion",
+          "agreeableness": "Agreeableness",
+          "neuroticism": "Neuroticism"
+        }
+      },
+      "memories": {
+        "title": "Memories",
+        "description": "Add memories and experiences you want to share",
+        "placeholder": "Describe the memory you want to share...",
+        "add": "Add Memory"
+      }
+    },
+    "startButton": "Start Customizing",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Enter name",
+      "type": "Companion Type",
+      "selectType": "Select type",
+      "appearance": "Appearance",
+      "voice": "Voice",
+      "personality": "Personality",
+      "memories": "Memories",
+      "submit": "Create Companion"
+    }
+  },
+  "common": {
+    "back": "Back",
+    "next": "Next",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "create": "Create",
+    "edit": "Edit",
+    "view": "View",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "startExperience": "Start Experience"
+  },
+  "games": {
+    "title": "Games",
+    "play": "Play Now",
+    "memory": {
+      "title": "Memory Game",
+      "shortDescription": "Test your memory skills with our fun matching game.",
+      "description": "Match pairs of cards in the fewest number of moves",
+      "newGame": "New Game",
+      "moves": "Moves: {{count}}",
+      "pairs": "Pairs: {{found}} / {{total}}",
+      "time": "Time: {{time}}s",
+      "congrats": "Congratulations!",
+      "stats": "You completed the game in {{moves}} moves and {{time}} seconds",
+      "playAgain": "Play Again"
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "description": "Learn more about UploadSoul",
+    "subtitle": "Building the World's Leading Digital Emotional Companion Platform",
+    "contactUs": "Contact Us",
+    "joinUs": "Join Us",
+    "intro": "UploadSoul is a technology startup registered in Vancouver, Canada, dedicated to building the world's leading digital emotional companion platform based on artificial intelligence and holographic virtual technology. We provide comprehensive, immersive emotional companionship solutions for users.",
+    "vision": "With 'Digital Immortality' and 'Holographic Emotional Companion' as our core competitiveness, UploadSoul has created a new emotional companionship ecosystem by integrating cutting-edge AI, big data, and VR immersive technology. With precise market positioning, advanced technology system, and international strategic layout, we are confident in achieving high-speed growth and capturing a significant share of the global emotional companionship market in the coming years.",
+    "techInnovation": "Technology Innovation",
+    "techInnovationDesc": "Integrating cutting-edge AI, big data, and VR immersive technology to create a unique digital emotional ecosystem",
+    "globalLayout": "Global Layout",
+    "globalLayoutDesc": "International strategic layout, committed to serving global users",
+    "investment": "Angel Round Financing",
+    "investmentDesc": "Currently conducting angel round financing, looking forward to working with you to jointly promote the new era of digital emotions and achieve win-win development.",
+    "contactInvest": "Learn More"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "description": "UploadSoul Privacy Policy",
+    "introduction": {
+      "title": "Introduction",
+      "content": "Welcome to UploadSoul's Privacy Policy. This policy describes how we collect, use, and protect your personal information."
+    },
+    "dataCollection": {
+      "title": "Data Collection",
+      "content": "We collect information that you provide directly to us, including your name, email address, and other personal information."
+    },
+    "dataUsage": {
+      "title": "Data Usage",
+      "content": "We use your information to provide and improve our services, communicate with you, and ensure the security of our platform."
+    },
+    "dataProtection": {
+      "title": "Data Protection",
+      "content": "We implement appropriate security measures to protect your personal information from unauthorized access and disclosure."
+    },
+    "userRights": {
+      "title": "User Rights",
+      "content": "You have the right to access, correct, or delete your personal information. Contact us to exercise these rights."
+    },
+    "cookies": {
+      "title": "Cookies",
+      "content": "We use cookies to improve your experience on our platform. You can control cookie settings in your browser."
+    },
+    "changes": {
+      "title": "Changes to Policy",
+      "content": "We may update this policy from time to time. We will notify you of any significant changes."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "content": "If you have any questions about this policy, please contact us at privacy@uploadsoul.com"
+    },
+    "lastUpdated": "Last Updated"
+  },
+  "pet": {
+    "title": "Virtual Pet",
+    "description": "Experience the joy of having a virtual pet",
+    "customize": "Customize Pet",
+    "adopt": "Adopt New Pet",
+    "myPets": "My Pets",
+    "custom": "Custom Pet",
+    "species": {
+      "cat": "Cat",
+      "dog": "Dog",
+      "rabbit": "Rabbit",
+      "bird": "Bird"
+    },
+    "stats": "Stats",
+    "happiness": "Happiness",
+    "energy": "Energy",
+    "health": "Health",
+    "level": "Level",
+    "experience": "Experience",
+    "customFeatures": "Custom Features",
+    "voice": "Voice",
+    "playRealSound": "Play Real Sound",
+    "playCustomVoice": "Play Custom Voice",
+    "memories": "Memories",
+    "actions": {
+      "feed": "Feed",
+      "play": "Play",
+      "sleep": "Sleep",
+      "clean": "Clean"
+    },
+    "selectPrompt": "Please select or adopt a pet",
+    "createNew": "Adopt New Pet",
+    "name": "Pet Name",
+    "namePlaceholder": "Give your pet a name",
+    "customizeTitle": "Customize Your Pet",
+    "photo": "Pet Photo",
+    "video": "Pet Video",
+    "realSound": "Real Sound",
+    "customVoice": "Custom Voice",
+    "addMemory": "Add Memory",
+    "memoryPlaceholder": "Enter a memory about your pet",
+    "personality": "Personality",
+    "personalities": {
+      "friendly": "Friendly",
+      "playful": "Playful",
+      "calm": "Calm",
+      "energetic": "Energetic"
+    },
+    "introduction": {
+      "title": "Virtual Pet Introduction",
+      "customize": {
+        "title": "Customize Pet",
+        "description": "Create your own virtual pet by uploading photos, videos, and sounds. You can:",
+        "features": {
+          "photo": "Upload real photos and videos of your pet",
+          "sound": "Add your pet's real sounds",
+          "voice": "Choose or upload custom voices",
+          "memories": "Add precious memories related to your pet",
+          "personality": "Select your pet's personality traits"
+        },
+        "button": "Start Customizing"
+      },
+      "adopt": {
+        "title": "Adopt New Pet",
+        "description": "Choose from our carefully designed pets to start your virtual pet journey. You can:",
+        "features": {
+          "species": "Choose from different pet types (cat, dog, rabbit, bird)",
+          "name": "Give your pet a unique name",
+          "stats": "Improve your pet's attributes through interactions",
+          "memories": "Record beautiful moments with your pet",
+          "growth": "Nurture your pet's growth and evolution"
+        },
+        "button": "Adopt Now"
+      }
+    }
+  },
+  "nav": {
+    "digitalWorld": "Digital World"
+  },
+  "digitalWorld": {
+    "title": "Digital World",
+    "description": "Experience immersive interactions in our custom-designed virtual environments.",
+    "fundingAd": "Currently raising angel round investment. Join us in advancing digital emotions.",
+    "scenes": {
+      "home": {
+        "title": "Cozy Home",
+        "description": "Build your ideal living space and enjoy cozy moments"
+      },
+      "park": {
+        "title": "Nature Park",
+        "description": "Take a walk in the lush park and experience nature's beauty"
+      },
+      "beach": {
+        "title": "Beach Resort",
+        "description": "Enjoy leisurely time on the sunny beach"
+      },
+      "custom": {
+        "title": "Custom Scene",
+        "description": "Create unique scenes based on your preferences"
+      }
+    },
+    "modes": {
+      "single": "Single Player",
+      "multi": "Multiplayer",
+      "couple": "Couple Mode"
+    },
+    "modal": {
+      "title": "Select Experience Mode",
+      "selectMode": "Please select an experience mode",
+      "startExperience": "Start Experience"
+    }
+  },
+  "startExperience": {
+    "title": "Start Experience",
+    "description": "Begin your digital journey"
+  },
+  "digitalHumanExperience": {
+    "title": "Digital Human Experience",
+    "description": "Experience digital human interaction"
+  },
+  "team": {
+    "title": "Our Team",
+    "description": "Meet the UploadSoul team"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Get in touch with UploadSoul"
+  },
+  "join": {
+    "title": "Join Us",
+    "description": "Join the UploadSoul community"
+  },
+  "vr": {
+    "title": "VR Experience",
+    "description": "Experience virtual reality with UploadSoul"
+  },
+  "allInOne": {
+    "title": "AI All-in-One",
+    "description": "Smart device designed for digital emotional companionship, providing immersive experience",
+    "overview": "The UploadSoul AI All-in-One is a comprehensive interactive device that brings your digital companions to life",
+    "features": {
+      "title": "Key Features",
+      "appearance": {
+        "title": "Customizable Appearance",
+        "description": "Choose from a variety of forms to match your preferences",
+        "types": {
+          "title": "Available Forms",
+          "dolls": "Interactive Dolls",
+          "figurines": "Collectible Figurines",
+          "realistic": "Realistic Human Replicas",
+          "pets": "Pet Companions",
+          "custom": "Custom Designs"
+        },
+        "customization": "Upload photos to create a design based on real appearances"
+      },
+      "interaction": {
+        "title": "Interactive Capabilities",
+        "description": "Engage with your companion through multiple modes",
+        "voice": "Natural Voice Conversations",
+        "movement": "Simple Interactive Movements",
+        "response": "Emotional Response System",
+        "touch": "Touch-Sensitive Surface"
+      },
+      "memory": {
+        "title": "Memory Integration",
+        "description": "Connect with your digital memories from the platform",
+        "upload": "Upload Digital Memories",
+        "sync": "Sync with Platform Account",
+        "share": "Share Memories Between Devices",
+        "backup": "Secure Memory Backup"
+      },
+      "technical": {
+        "title": "Technical Specifications",
+        "processor": "Advanced AI Processing Unit",
+        "display": "HD Holographic Display",
+        "audio": "360° Spatial Audio",
+        "battery": "24-hour Battery Life",
+        "connectivity": "Wi-Fi & Bluetooth Connectivity"
+      }
+    },
+    "models": {
+      "title": "Available Models",
+      "standard": {
+        "title": "Standard Edition",
+        "description": "Perfect for everyday companionship"
+      },
+      "premium": {
+        "title": "Premium Edition",
+        "description": "Enhanced features and customization options"
+      },
+      "limited": {
+        "title": "Limited Edition",
+        "description": "Exclusive designs with advanced capabilities"
+      }
+    },
+    "cta": {
+      "design": "Design Your Companion",
+      "customize": "Customize Appearance",
+      "explore": "Explore Models",
+      "preorder": "Pre-order Now"
+    }
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "description": "UploadSoul Terms of Service",
+    "introduction": {
+      "title": "Introduction",
+      "content": "Welcome to UploadSoul's Terms of Service. These terms govern your use of our platform and services."
+    },
+    "definitions": {
+      "title": "Definitions",
+      "content": "Key terms used in these terms of service are defined for clarity and understanding."
+    },
+    "account": {
+      "title": "Account Terms",
+      "content": "You are responsible for maintaining the security of your account and all activities that occur under your account."
+    },
+    "services": {
+      "title": "Services",
+      "content": "We provide digital life services, including digital companions, virtual pets, and digital immortality features."
+    },
+    "userContent": {
+      "title": "User Content",
+      "content": "You retain ownership of your content, but grant us a license to use it for providing our services."
+    },
+    "intellectualProperty": {
+      "title": "Intellectual Property",
+      "content": "All intellectual property rights in our platform and services belong to UploadSoul."
+    },
+    "limitations": {
+      "title": "Limitations",
+      "content": "Our services are provided 'as is' without warranties of any kind. We are not liable for certain damages."
+    },
+    "termination": {
+      "title": "Termination",
+      "content": "We may terminate or suspend your account if you violate these terms."
+    },
+    "changes": {
+      "title": "Changes to Terms",
+      "content": "We may update these terms from time to time. Continued use of our services constitutes acceptance of the updated terms."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "content": "If you have any questions about these terms, please contact us at legal@uploadsoul.com"
+    },
+    "lastUpdated": "Last Updated"
+  },
+  "sitemap": {
+    "title": "Sitemap",
+    "description": "Complete list of pages on UploadSoul",
+    "lastUpdated": "Last Updated",
+    "description": "Explore all pages of our website"
+  },
+  "login": {
+    "title": "Sign in to your account",
+    "email": "Email address",
+    "password": "Password",
+    "remember": "Remember me",
+    "forgot": "Forgot your password?",
+    "submit": "Sign in",
+    "loading": "Signing in...",
+    "error": "Invalid email or password",
+    "or": "Or",
+    "register": "Create a new account"
+  },
+  "register": {
+    "title": "Create your account",
+    "username": "Username",
+    "email": "Email address",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "submit": "Create account",
+    "loading": "Creating account...",
+    "error": "Failed to create account",
+    "passwordMismatch": "Passwords do not match",
+    "or": "Or",
+    "login": "Sign in to your account"
+  }
+}
