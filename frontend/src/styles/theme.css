@@ -26,7 +26,7 @@
   --switch-background: #B2B0B0;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --ring: #091D4B;
+  --ring: #D11D78;
   --chart-1: #091D4B;
   --chart-2: #D11D78;
   --chart-3: #B2B0B0;
@@ -54,7 +54,7 @@
   --primary: #156b5c;
   --primary-foreground: #FEFEFE;
   --secondary: #e3b24d;
-  --secondary-foreground: #FEFEFE;
+  --secondary-foreground: #212223;
   --muted: #3a3b3c;
   --muted-foreground: #B2B0B0;
   --accent: #e3b24d;
@@ -65,7 +65,7 @@
   --input: rgba(178, 176, 176, 0.1);
   --input-background: #2a2b2c;
   --switch-background: #3a3b3c;
-  --ring: #D11D78;
+  --ring: #156b5c;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
   --chart-1: #D11D78;

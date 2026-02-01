@@ -97,15 +97,15 @@ export function CreatePersonaDialog({ onCreatePersona }: CreatePersonaDialogProp
                     key={option.value}
                     type="button"
                     onClick={() => setSelectedType(option.value as any)}
-                    className={`p-4 border-2 rounded-lg text-center transition-all ${
+                    className={`p-4 bg-background border-2 rounded-lg text-center transition-all ${
                       selectedType === option.value
-                        ? "border-black bg-gray-50"
-                        : "border-gray-200 hover:border-gray-300"
+                        ? "border-primary"
+                        : "border-muted hover:border-muted-foreground"
                     }`}
                   >
                     <Icon className="w-8 h-8 mx-auto mb-2" />
                     <div className="font-medium">{option.label}</div>
-                    <div className="text-xs text-gray-500 mt-1">{option.description}</div>
+                    <div className="text-xs text-muted-foreground mt-1">{option.description}</div>
                   </button>
                 );
               })}

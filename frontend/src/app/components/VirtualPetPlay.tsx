@@ -161,7 +161,7 @@ const getPetInteractions = (
     {
       label: "Pet",
       icon: "🐾",
-      effect: { happiness: 10, energy: -2 },
+      effect: { happiness: 10, energy: 1 },
     },
     {
       label: "Feed",
@@ -190,6 +190,7 @@ export function VirtualPetPlay({ persona, onBack }: VirtualPetPlayProps) {
   });
 
   const [lastInteraction, setLastInteraction] = useState<string>("");
+  const [lastInteractionTime, setLastInteractionTime] = useState<number>(0);
   const [interactionCooldown, setInteractionCooldown] = useState<string | null>(null);
 
   const interactions = getPetInteractions(persona.name, persona.type);
@@ -200,7 +201,7 @@ export function VirtualPetPlay({ persona, onBack }: VirtualPetPlayProps) {
       setStats((prev) => ({
         happiness: Math.max(0, prev.happiness - 0.5),
         hunger: Math.max(0, prev.hunger - 1),
-        energy: Math.max(0, prev.energy + 0.5),
+        energy: prev.hunger > 30 ? Math.max(0, prev.energy + 0.5) : Math.max(0, prev.energy - 1),
         cleanliness: Math.max(0, prev.cleanliness - 0.5),
       }));
     }, 5000); // Every 5 seconds
@@ -229,6 +230,7 @@ export function VirtualPetPlay({ persona, onBack }: VirtualPetPlayProps) {
       cleanliness: Math.min(100, Math.max(0, prev.cleanliness + (interaction.effect.cleanliness || 0))),
     }));
 
+    setLastInteractionTime(Date.now());
     setLastInteraction(`${interaction.label} ${interaction.icon}`);
     
     // Set cooldown for this specific interaction
@@ -297,14 +299,29 @@ export function VirtualPetPlay({ persona, onBack }: VirtualPetPlayProps) {
                   
                   {/* Interaction Feedback */}
                   {lastInteraction && (
-                    <div className="text-primary absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-6xl animate-bounce pointer-events-none transition-opacity duration-1000 opacity-100" style={{ animation: 'bounce 1s ease-in-out 2, fadeOut 0.5s ease-in-out 2s forwards' }}>
-                      {lastInteraction}
+                    <div
+                      className="absolute top-1/2 left-1/2 pointer-events-none
+                                transform -translate-x-1/2 -translate-y-1/2
+                                animate-bounce transition-opacity duration-1000 opacity-100"
+                      style={{ animation: 'bounce 1s ease-in-out 3, fadeOut 0.5s ease-in-out 2s forwards' }}
+                    >
+                      {/* Blur halo */}
+                      <div
+                        className="absolute inset-0 -z-10
+                                  blur-xl opacity-80
+                                  bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.5))]
+                                  dark:bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.5))]
+                                  scale-x-150 scale-y-125"
+                      />
+                      <div className="text-primary text-6xl font-semibold">
+                        {lastInteraction}
+                      </div>
                     </div>
                   )}
 
                   {/* Status Gauges Overlay */}
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/60 to-transparent p-6 backdrop-blur-sm">
-                    <div className="space-y-3">
+                    <div className="space-y-2">
                       {/* Happiness */}
                       <div>
                         <div className="flex items-center justify-between mb-1.5">
@@ -312,7 +329,7 @@ export function VirtualPetPlay({ persona, onBack }: VirtualPetPlayProps) {
                             <Heart className="w-4 h-4 text-white" />
                             <span className="text-sm font-medium text-white">Happiness</span>
                           </div>
-                          <span className="text-sm font-bold text-white">
+                          <span className={`text-sm font-bold text-white ${getStatTextColor(stats.happiness)}`}>
                             {Math.round(stats.happiness)}%
                           </span>
                         </div>
@@ -331,7 +348,7 @@ export function VirtualPetPlay({ persona, onBack }: VirtualPetPlayProps) {
                             <Utensils className="w-4 h-4 text-white" />
                             <span className="text-sm font-medium text-white">Fullness</span>
                           </div>
-                          <span className="text-sm font-bold text-white">
+                          <span className={`text-sm font-bold text-white ${getStatTextColor(stats.hunger)}`}>
                             {Math.round(stats.hunger)}%
                           </span>
                         </div>
@@ -350,7 +367,7 @@ export function VirtualPetPlay({ persona, onBack }: VirtualPetPlayProps) {
                             <Zap className="w-4 h-4 text-white" />
                             <span className="text-sm font-medium text-white">Energy</span>
                           </div>
-                          <span className="text-sm font-bold text-white">
+                          <span className={`text-sm font-bold text-white ${getStatTextColor(stats.energy)}`}>
                             {Math.round(stats.energy)}%
                           </span>
                         </div>

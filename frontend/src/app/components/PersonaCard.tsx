@@ -62,7 +62,7 @@ export function PersonaCard({ persona, onChat }: PersonaCardProps) {
           </div>
           <Heart className="w-5 h-5 text-gray-400 hover:text-red-500 hover:fill-red-500 transition-colors" />
         </div>
-        <p className="text-sm text-gray-600 mb-3 line-clamp-2">
+        <p className="text-sm text-card-foreground mb-3 line-clamp-2">
           {persona.description}
         </p>
         <button
