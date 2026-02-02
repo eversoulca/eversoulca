@@ -61,11 +61,19 @@ function CardAction({ className, ...props }: React.ComponentProps<"div">) {
   );
 }
 
-function CardContent({ className, ...props }: React.ComponentProps<"div">) {
+type CardContentProps = React.ComponentProps<"div"> & {
+  disableLastPadding?: boolean
+}
+
+function CardContent({ className, disableLastPadding = false, ...props }: CardContentProps) {
   return (
     <div
       data-slot="card-content"
-      className={cn("px-6", className)} // [&:last-child]:pb-6
+      className={cn(
+        "px-6",
+        !disableLastPadding && "[&:last-child]:pb-6",
+        className
+      )}
       {...props}
     />
   );

@@ -285,7 +285,7 @@ export function VirtualPetPlay({ persona, onBack }: VirtualPetPlayProps) {
           {/* Pet Display */}
           <div className="lg:col-span-2">
             <Card className="overflow-hidden">
-              <CardContent className="p-0">
+              <CardContent disableLastPadding className="p-0">
                 <div className="relative aspect-square bg-gradient-to-br from-primary/5 to-accent/10 flex items-center justify-center">
                   {persona.imageUrl ? (
                     <img
