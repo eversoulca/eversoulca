@@ -208,8 +208,10 @@ export default function App() {
           personas={personas}
           onNavigateHome={handleNavigateHome}
           onViewPersona={handleViewPersona}
+          onViewSubscriptions={handleViewSubscriptions}
           onLogout={handleLogout}
           currentUser={currentUser}
+          authToken={authToken ?? undefined}
         />
         <div className="flex-1 overflow-hidden">
           {isPet ? (
@@ -240,6 +242,7 @@ export default function App() {
         onLogin={handleSwitchToLogin}
         onLogout={handleLogout}
         currentUser={isAuthenticated ? currentUser : null}
+        authToken={authToken ?? undefined}
       />
 
       {currentView === "home" && (

@@ -9,6 +9,7 @@ import {
   Coins,
   CreditCard,
   Users,
+  Shield,
 } from "lucide-react";
 import { Button } from "./ui/button";
 import {
@@ -31,6 +32,7 @@ interface HeaderProps {
   onLogin?: () => void;
   onLogout?: () => void;
   currentUser?: any;
+  authToken?: string;
 }
 
 export function Header({
@@ -43,8 +45,12 @@ export function Header({
   onLogin,
   onLogout,
   currentUser,
+  authToken,
 }: HeaderProps) {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isTwoFactorEnabled, setIsTwoFactorEnabled] = useState(false);
+  const [isTogglingTwoFactor, setIsTogglingTwoFactor] = useState(false);
+  const [twoFactorMessage, setTwoFactorMessage] = useState("");
 
   // Load dark mode preference
   useEffect(() => {
@@ -54,6 +60,55 @@ export function Header({
       document.documentElement.classList.add("dark");
     }
   }, []);
+
+  // Load 2FA status when user changes
+  useEffect(() => {
+    if (currentUser?.isEmailTwoFactorEnabled !== undefined) {
+      setIsTwoFactorEnabled(currentUser.isEmailTwoFactorEnabled);
+    }
+  }, [currentUser]);
+
+  const handleToggleTwoFactor = async () => {
+    if (!authToken) {
+      setTwoFactorMessage("Not authenticated");
+      return;
+    }
+
+    setIsTogglingTwoFactor(true);
+    setTwoFactorMessage("");
+
+    try {
+      const response = await fetch(
+        "http://localhost:5266/api/auth/enable-email-2fa",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${authToken}`,
+          },
+          body: JSON.stringify({ enable: !isTwoFactorEnabled }),
+        }
+      );
+
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data.error || "Failed to update 2FA settings");
+      }
+
+      const data = await response.json();
+      setIsTwoFactorEnabled(!isTwoFactorEnabled);
+      setTwoFactorMessage(data.message);
+
+      // Clear message after 3 seconds
+      setTimeout(() => setTwoFactorMessage(""), 3000);
+    } catch (err) {
+      setTwoFactorMessage(
+        err instanceof Error ? err.message : "Failed to update 2FA settings"
+      );
+    } finally {
+      setIsTogglingTwoFactor(false);
+    }
+  };
 
   const toggleDarkMode = () => {
     const newMode = !isDarkMode;
@@ -173,6 +228,30 @@ export function Header({
                   <User className="w-4 h-4 mr-2" />
                   Profile Settings
                 </DropdownMenuItem>
+                {/* Security Section */}
+                <DropdownMenuLabel className="flex items-center gap-2">
+                  <Shield className="w-4 h-4" />
+                  Security
+                </DropdownMenuLabel>
+                <DropdownMenuItem onClick={handleToggleTwoFactor} disabled={isTogglingTwoFactor}>
+                  <div className="flex items-center gap-2 w-full">
+                    <Shield className="w-4 h-4" />
+                    <div className="flex flex-col flex-1">
+                      <span className="text-sm">
+                        Email 2FA
+                      </span>
+                      <span className="text-xs text-gray-500">
+                        {isTwoFactorEnabled ? "Enabled" : "Disabled"}
+                      </span>
+                    </div>
+                    <div className={`w-2 h-2 rounded-full ${isTwoFactorEnabled ? "bg-green-500" : "bg-gray-400"}`} />
+                  </div>
+                </DropdownMenuItem>
+                {twoFactorMessage && (
+                  <DropdownMenuItem disabled>
+                    <span className="text-xs text-blue-600">{twoFactorMessage}</span>
+                  </DropdownMenuItem>
+                )}
 
                 <DropdownMenuSeparator />
 

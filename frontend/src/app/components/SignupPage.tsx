@@ -12,6 +12,7 @@ interface SignupPageProps {
 
 export function SignupPage({ onSignup, onSwitchToLogin }: SignupPageProps) {
   const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -37,11 +38,11 @@ export function SignupPage({ onSignup, onSwitchToLogin }: SignupPageProps) {
     }
 
     try {
-      const payload = { username, password };
+      const payload = { username, email, password };
       console.log('Sending payload:', payload);
       console.log('JSON stringified:', JSON.stringify(payload));
       
-      const response = await fetch("http://localhost:5266/api/users", {
+      const response = await fetch("http://localhost:5266/api/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -58,7 +59,7 @@ export function SignupPage({ onSignup, onSwitchToLogin }: SignupPageProps) {
       const user = await response.json();
 
       // Automatically log in after signup
-      const loginResponse = await fetch("http://localhost:5266/api/users/login", {
+      const loginResponse = await fetch("http://localhost:5266/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -111,6 +112,21 @@ export function SignupPage({ onSignup, onSwitchToLogin }: SignupPageProps) {
                 placeholder="Choose a username"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
+                required
+                disabled={isLoading}
+              />
+            </div>
+
+            <div className="space-y-2">
+              <label htmlFor="email" className="text-sm font-medium">
+                Email
+              </label>
+              <Input
+                id="email"
+                type="text"
+                placeholder="Provide your email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
                 disabled={isLoading}
               />
