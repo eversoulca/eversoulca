@@ -11,57 +11,128 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Label } from "./ui/label";
-import { Plus, User, Users, PawPrint, Upload } from "lucide-react";
+import { Plus, User, Users, PawPrint, Upload, Trash2, Lock } from "lucide-react";
 import { Persona } from "./PersonaCard";
 
 interface CreatePersonaDialogProps {
   onCreatePersona: (persona: Omit<Persona, "id" | "createdAt">) => void;
 }
 
+const PET_PERSONALITY_TRAITS = [
+  "Playful",
+  "Shy",
+  "Curious",
+  "Calm",
+  "Lively",
+  "Affectionate",
+  "Energetic",
+  "Gentle",
+  "Independent",
+  "Loyal",
+  "Mischievous",
+  "Friendly",
+];
+
 export function CreatePersonaDialog({ onCreatePersona }: CreatePersonaDialogProps) {
   const [open, setOpen] = useState(false);
-  const [selectedType, setSelectedType] = useState<"self" | "family" | "pet">("family");
+  const [selectedType, setSelectedType] = useState<"self" | "family" | "pet">("pet");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [personality, setPersonality] = useState("");
-  const [memories, setMemories] = useState("");
+  const [selectedPersonalityTrait, setSelectedPersonalityTrait] = useState("");
+  const [currentMemory, setCurrentMemory] = useState("");
+  const [memoryList, setMemoryList] = useState<string[]>([]);
   const [imageUrl, setImageUrl] = useState("");
-  const [files, setFiles] = useState<File[]>([]);
+  const [imageFile, setImageFile] = useState<File | null>(null);
+  const [voiceFile, setVoiceFile] = useState<File | null>(null);
+  const [videoFile, setVideoFile] = useState<File | null>(null);
+
+  const handleAddMemory = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (currentMemory.trim()) {
+      setMemoryList([...memoryList, currentMemory.trim()]);
+      setCurrentMemory("");
+    }
+  };
+
+  const handleDeleteMemory = (index: number) => {
+    setMemoryList(memoryList.filter((_, i) => i !== index));
+  };
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      const file = e.target.files[0];
+      if (file.type.startsWith("image/")) {
+        setImageFile(file);
+        const url = URL.createObjectURL(file);
+        setImageUrl(url);
+      }
+    }
+  };
+
+  const handleVoiceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      const file = e.target.files[0];
+      if (file.type.startsWith("audio/")) {
+        setVoiceFile(file);
+      }
+    }
+  };
+
+  const handleVideoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      const file = e.target.files[0];
+      if (file.type.startsWith("video/")) {
+        setVideoFile(file);
+      }
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name.trim()) return;
+    
+    // Validation for required fields
+    if (!name.trim()) {
+      alert("Name is required");
+      return;
+    }
+
+    if (selectedType === "pet") {
+      if (!imageFile) {
+        alert("Pet photo is required");
+        return;
+      }
+      if (!voiceFile) {
+        alert("Pet voice audio is required");
+        return;
+      }
+    }
+
+    // Build personality string based on type
+    let personalityString = "";
+    if (selectedType === "pet" && selectedPersonalityTrait) {
+      personalityString = selectedPersonalityTrait;
+    }
 
     onCreatePersona({
       name,
       type: selectedType,
       description,
-      personality,
-      memories,
+      personality: personalityString,
+      memories: memoryList.join("; "),
       imageUrl,
     });
 
     // Reset form
     setName("");
     setDescription("");
-    setPersonality("");
-    setMemories("");
+    setSelectedPersonalityTrait("");
+    setCurrentMemory("");
+    setMemoryList([]);
     setImageUrl("");
-    setFiles([]);
+    setImageFile(null);
+    setVoiceFile(null);
+    setVideoFile(null);
     setOpen(false);
-  };
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files) {
-      const newFiles = Array.from(e.target.files);
-      setFiles((prev) => [...prev, ...newFiles]);
-      
-      // Create preview URL for the first image
-      if (newFiles.length > 0 && newFiles[0].type.startsWith("image/")) {
-        const url = URL.createObjectURL(newFiles[0]);
-        setImageUrl(url);
-      }
-    }
   };
 
   const typeOptions = [
@@ -114,7 +185,7 @@ export function CreatePersonaDialog({ onCreatePersona }: CreatePersonaDialogProp
 
           {/* Name */}
           <div className="space-y-2">
-            <Label htmlFor="name">Name *</Label>
+            <Label htmlFor="name">Name</Label>
             <Input
               id="name"
               value={name}
@@ -136,60 +207,160 @@ export function CreatePersonaDialog({ onCreatePersona }: CreatePersonaDialogProp
             />
           </div>
 
-          {/* Personality */}
-          <div className="space-y-2">
-            <Label htmlFor="personality">Personality Traits</Label>
-            <Textarea
-              id="personality"
-              value={personality}
-              onChange={(e) => setPersonality(e.target.value)}
-              placeholder="Describe their personality, quirks, sense of humor, way of speaking..."
-              rows={3}
-            />
-          </div>
+          {/* Personality Trait - Only for Pet */}
+          {selectedType === "pet" && (
+            <div className="space-y-2">
+              <Label htmlFor="personality">Personality Trait</Label>
+              <select
+                id="personality"
+                value={selectedPersonalityTrait}
+                onChange={(e) => setSelectedPersonalityTrait(e.target.value)}
+                className="w-full px-3 py-2 rounded-lg border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+              >
+                <option value="">Select a personality trait</option>
+                {PET_PERSONALITY_TRAITS.map((trait) => (
+                  <option key={trait} value={trait}>
+                    {trait}
+                  </option>
+                ))}
+              </select>
+            </div>
+          )}
 
-          {/* Memories */}
+          {/* Memories - List Management */}
           <div className="space-y-2">
             <Label htmlFor="memories">Key Memories & Stories</Label>
-            <Textarea
-              id="memories"
-              value={memories}
-              onChange={(e) => setMemories(e.target.value)}
-              placeholder="Share important memories, stories, favorite sayings, or experiences..."
-              rows={4}
-            />
-          </div>
-
-          {/* File Upload */}
-          <div className="space-y-2">
-            <Label htmlFor="files">Upload Photos & Documents</Label>
-            <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-gray-400 transition-colors">
-              <input
-                type="file"
-                id="files"
-                multiple
-                accept="image/*,.pdf,.doc,.docx,.txt"
-                onChange={handleFileChange}
-                className="hidden"
+            <div className="flex gap-2">
+              <Input
+                id="memories"
+                value={currentMemory}
+                onChange={(e) => setCurrentMemory(e.target.value)}
+                placeholder={selectedType === "pet" ? "e.g. Likes to hide on the sofa" : "Share important memories and stories..."}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    e.preventDefault();
+                    handleAddMemory(e as any);
+                  }
+                }}
               />
-              <label htmlFor="files" className="cursor-pointer">
-                <Upload className="w-10 h-10 mx-auto mb-2 text-gray-400" />
-                <div className="text-sm text-gray-600">
-                  Click to upload photos, videos, or documents
-                </div>
-                <div className="text-xs text-gray-400 mt-1">
-                  {files.length > 0 ? `${files.length} file(s) selected` : "JPG, PNG, PDF, DOC"}
-                </div>
-              </label>
+              <Button
+                type="button"
+                onClick={handleAddMemory}
+                variant="outline"
+                size="sm"
+                className="gap-2"
+              >
+                <Plus className="w-4 h-4" />
+                Add
+              </Button>
             </div>
-            {files.length > 0 && (
-              <div className="text-xs text-gray-600 mt-2">
-                {files.map((file, i) => (
-                  <div key={i}>• {file.name}</div>
+            
+            {/* Memories List */}
+            {memoryList.length > 0 && (
+              <div className="mt-3 space-y-2 p-3 bg-background rounded-lg border">
+                {memoryList.map((memory, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center justify-between bg-muted p-2 rounded border text-sm"
+                  >
+                    <span className="text-foreground">{memory}</span>
+                    <button
+                      type="button"
+                      onClick={() => handleDeleteMemory(index)}
+                      className="text-muted-foreground hover:text-red-500 transition-colors"
+                      title="Delete memory"
+                    >
+                      <Trash2 className="w-4 h-4" />
+                    </button>
+                  </div>
                 ))}
               </div>
             )}
           </div>
+
+          {/* Photo Upload - Mandatory for Pet */}
+          {selectedType === "pet" && (
+            <div className="space-y-2">
+              <Label htmlFor="photo">Pet Photo (Required)</Label>
+              <div className="border-2 border-dashed border rounded-lg p-6 text-center transition-colors">
+                <input
+                  type="file"
+                  id="photo"
+                  accept="image/*"
+                  onChange={handleImageChange}
+                  className="hidden"
+                />
+                <label htmlFor="photo" className="cursor-pointer">
+                  <Upload className="w-10 h-10 mx-auto mb-2 text-gray-400" />
+                  <div className="text-sm text-muted-foreground">
+                    Click to upload pet photo
+                  </div>
+                  <div className="text-xs text-muted-foreground mt-1">
+                    {imageFile ? imageFile.name : "JPG, PNG, or GIF"}
+                  </div>
+                </label>
+              </div>
+              {imageFile && (
+                <div className="text-xs text-green-600">✓ Photo uploaded: {imageFile.name}</div>
+              )}
+            </div>
+          )}
+
+          {/* Voice Audio Upload - Mandatory for Pet */}
+          {selectedType === "pet" && (
+            <div className="space-y-2">
+              <Label htmlFor="voice">Pet Voice Audio (Required)</Label>
+              <div className="border-2 border-dashed border rounded-lg p-6 text-center transition-colors">
+                <input
+                  type="file"
+                  id="voice"
+                  accept="audio/*"
+                  onChange={handleVoiceChange}
+                  className="hidden"
+                />
+                <label htmlFor="voice" className="cursor-pointer">
+                  <Upload className="w-10 h-10 mx-auto mb-2 text-gray-400" />
+                  <div className="text-sm text-muted-foreground">
+                    Click to upload pet voice audio
+                  </div>
+                  <div className="text-xs text-muted-foreground mt-1">
+                    {voiceFile ? voiceFile.name : "MP3, WAV, or M4A"}
+                  </div>
+                </label>
+              </div>
+              {voiceFile && (
+                <div className="text-xs text-green-600">✓ Audio uploaded: {voiceFile.name}</div>
+              )}
+            </div>
+          )}
+
+          {/* Video Upload - Premium Feature */}
+          {selectedType === "pet" && (
+            <div className="space-y-2">
+              <Label htmlFor="video">Pet Video (Premium Feature)</Label>
+              <div className="border-2 border-dashed border rounded-lg p-6 text-center bg-muted opacity-50">
+                <input
+                  type="file"
+                  id="video"
+                  accept="video/*"
+                  onChange={handleVideoChange}
+                  disabled
+                  className="hidden"
+                />
+                <label htmlFor="video" className="cursor-not-allowed">
+                  <div className="flex justify-center mb-2">
+                    <Lock className="w-10 h-10 text-muted-foreground" />
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    Video upload requires Premium subscription
+                  </div>
+                  <div className="text-xs text-muted-foreground mt-1">
+                    Upgrade your account to enable video memories
+                  </div>
+                </label>
+              </div>
+            </div>
+          )}
 
           {/* Preview */}
           {imageUrl && (
