@@ -97,7 +97,7 @@ if (app.Environment.IsDevelopment())
 }
 // </snippet_UseSwagger>
 
-app.UseHttpsRedirection();
+
 
 app.UseCors("AllowReactApp");
 
