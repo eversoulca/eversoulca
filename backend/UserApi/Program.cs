@@ -104,6 +104,12 @@ app.UseCors("AllowReactApp");
 app.UseAuthentication();
 app.UseAuthorization();
 
+app.UseDefaultFiles();          // looks for index.html by default
+app.UseStaticFiles();           // serves files from wwwroot
+
 app.MapControllers();
+
+// fallback to index.html for client‑side routing
+app.MapFallbackToFile("index.html");
 
 app.Run();
