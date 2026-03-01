@@ -18,10 +18,10 @@ jobs:
         node-version: '20'
     - name: Install frontend deps
       working-directory: eversoulca/frontend
-      run: npm install
+      run: pnpm install
     - name: Build frontend
       working-directory: eversoulca/frontend
-      run: npm run build
+      run: pnpm run build
 
     - name: Copy static assets to API
       run: |
