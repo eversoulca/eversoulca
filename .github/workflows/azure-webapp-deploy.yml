@@ -17,17 +17,17 @@ jobs:
       with:
         node-version: '20'
     - name: Install frontend deps
-      working-directory: eversoulca/frontend
+      working-directory: frontend
       run: pnpm install
     - name: Build frontend
-      working-directory: eversoulca/frontend
+      working-directory: frontend
       run: pnpm run build
 
     - name: Copy static assets to API
       run: |
         rm -rf backend/UserApi/wwwroot
         mkdir -p backend/UserApi/wwwroot
-        cp -a eversoulca/frontend/dist/. backend/UserApi/wwwroot/
+        cp -a frontend/dist/. backend/UserApi/wwwroot/
 
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
