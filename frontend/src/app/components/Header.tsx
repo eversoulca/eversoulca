@@ -78,8 +78,9 @@ export function Header({
     setTwoFactorMessage("");
 
     try {
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5266';
       const response = await fetch(
-        "http://localhost:5266/api/auth/enable-email-2fa",
+        `${apiUrl}/api/auth/enable-email-2fa`,
         {
           method: "POST",
           headers: {

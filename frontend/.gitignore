@@ -8,3 +8,7 @@
 
 # miscellaneous
 .DS_Store
+
+# environment files
+.env.local
+.env.*.local

@@ -38,11 +38,12 @@ export function SignupPage({ onSignup, onSwitchToLogin }: SignupPageProps) {
     }
 
     try {
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5266';
       const payload = { username, email, password };
       console.log('Sending payload:', payload);
       console.log('JSON stringified:', JSON.stringify(payload));
       
-      const response = await fetch("http://localhost:5266/api/auth/register", {
+      const response = await fetch(`${apiUrl}/api/auth/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -59,7 +60,7 @@ export function SignupPage({ onSignup, onSwitchToLogin }: SignupPageProps) {
       const user = await response.json();
 
       // Automatically log in after signup
-      const loginResponse = await fetch("http://localhost:5266/api/auth/login", {
+      const loginResponse = await fetch(`${apiUrl}/api/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

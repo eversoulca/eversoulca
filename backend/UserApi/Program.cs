@@ -72,12 +72,19 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddAuthorization();
 
-// Add CORS policy for development
+// Add CORS policy for development and production
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp", builder =>
     {
-        builder.WithOrigins("https://yourdomain.com", "http://localhost:5173")
+        var allowedOrigins = new[]
+        {
+            "https://uploadsoul-cjakere2gqa4a6cb.canadacentral-01.azurewebsites.net/",
+            "http://localhost:5173",
+            "http://localhost:5266",
+        };
+
+        builder.WithOrigins(allowedOrigins)
                .AllowAnyMethod()
                .AllowAnyHeader();
     });
