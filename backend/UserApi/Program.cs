@@ -5,6 +5,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using UserApi.Models;
 using UserApi.Services;
+using Pomelo.EntityFrameworkCore.MySql;  // EF Core MySQL provider extension methods
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,8 +24,25 @@ builder.Services.AddOpenApi();
 builder.Services.AddScoped<IEmailService, SmtpEmailService>();
 
 // Configure DbContext
+// during development you can point this at a local MySQL instance;
+// when the app is deployed the connection string is pulled from
+// configuration (see appsettings.json or Azure Web App connection strings).
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
 builder.Services.AddDbContext<UserContext>(opt =>
-    opt.UseInMemoryDatabase("Users"));
+{
+    if (!string.IsNullOrWhiteSpace(connectionString))
+    {
+        // use the Pomelo provider; requires the NuGet package
+        opt.UseMySql(connectionString,
+            ServerVersion.AutoDetect(connectionString));
+    }
+    else
+    {
+        // fall back to in‑memory for quick local debugging without a database
+        opt.UseInMemoryDatabase("Users");
+    }
+});
 
 // Configure ASP.NET Core Identity
 builder.Services
