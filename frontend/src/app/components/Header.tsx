@@ -80,7 +80,7 @@ export function Header({
     try {
       const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5266';
       const response = await fetch(
-        `${apiUrl}/api/auth/enable-email-2fa`,
+        `${apiUrl}/auth/enable-email-2fa`,
         {
           method: "POST",
           headers: {

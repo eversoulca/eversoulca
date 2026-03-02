@@ -29,7 +29,7 @@ export function LoginPage({ onLogin, onSwitchToSignup }: LoginPageProps) {
 
     try {
       const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5266';
-      const response = await fetch(`${apiUrl}/api/auth/login`, {
+      const response = await fetch(`${apiUrl}/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -77,7 +77,7 @@ export function LoginPage({ onLogin, onSwitchToSignup }: LoginPageProps) {
     try {
       const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5266';
       const response = await fetch(
-        `${apiUrl}/api/auth/verify-email-2fa/${userId}`,
+        `${apiUrl}/auth/verify-email-2fa/${userId}`,
         {
           method: "POST",
           headers: {

@@ -43,7 +43,7 @@ export function SignupPage({ onSignup, onSwitchToLogin }: SignupPageProps) {
       console.log('Sending payload:', payload);
       console.log('JSON stringified:', JSON.stringify(payload));
       
-      const response = await fetch(`${apiUrl}/api/auth/register`, {
+      const response = await fetch(`${apiUrl}/auth/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -60,7 +60,7 @@ export function SignupPage({ onSignup, onSwitchToLogin }: SignupPageProps) {
       const user = await response.json();
 
       // Automatically log in after signup
-      const loginResponse = await fetch(`${apiUrl}/api/auth/login`, {
+      const loginResponse = await fetch(`${apiUrl}/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
