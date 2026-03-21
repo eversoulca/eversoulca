@@ -1,0 +1,33 @@
+/* src/pages/PetPage.css */
+
+.pet-hub-body {
+    background-color: #221F1D;
+    font-family: 'Manrope', sans-serif;
+    color: #E0DEDC;
+    min-height: 100vh;
+}
+
+.whisper-depth {
+    box-shadow: inset 0 0 5px rgba(255, 180, 100, 0.15);
+}
+
+.glass-card-pet {
+    background: rgba(45, 43, 42, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(194, 147, 108, 0.1);
+}
+
+.mood-gradient {
+    background: linear-gradient(135deg, #C2936C 0%, #A57C4F 50%, #7F5C3E 100%);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}

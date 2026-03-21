@@ -1,70 +1,131 @@
-# Vercel Deployment Guide for eversoulca
+# UploadSoul Deployment Guide
 
-This project deploys a Vite React frontend and ASP.NET Core backend API using Vercel.
+## Prerequisites
 
-## Directory Structure
-- `frontend/`: Vite React app
-- `backend/UserApi/`: ASP.NET Core API
+1. GitHub account with access to the repository
+2. Vercel account (sign up at https://vercel.com if you don't have one)
+3. Node.js and pnpm installed on your local machine for testing
 
-## Vercel Configuration
-- `vercel.json` in `eversoulca` configures builds and routes:
-  - Frontend is built and served from `frontend/dist`
-  - Backend is deployed as a Vercel Serverless Function
-  - API requests are routed to the backend
+## Deployment Process
 
-## Steps
+### Step 1: Push Changes to GitHub
 
-1. **Frontend Build**
-   - Vercel runs `vite build` (already set in `package.json`).
-   - Output is served from `frontend/dist`.
+All changes pushed to the `main` branch will trigger the automated deployment workflow:
 
-2. **Backend API**
-   - Vercel uses `@vercel/dotnet` to deploy ASP.NET Core API.
-   - API requests are routed to `/api/*`.
+```bash
+# Add all changes
+git add .
 
-3. **Routing**
-   - All `/api/*` requests go to backend.
-   - All other requests go to frontend.
+# Commit changes with a descriptive message
+git commit -m "Your commit message"
 
-## Example `vercel.json`
-```
-{
-  "version": 2,
-  "builds": [
-    {
-      "src": "frontend/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "frontend/dist"
-      }
-    },
-    {
-      "src": "backend/UserApi/Program.cs",
-      "use": "@vercel/dotnet"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "backend/UserApi/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "frontend/dist/$1"
-    }
-  ]
-}
+# Push to the main branch
+git push origin main
 ```
 
-## Notes
-- Make sure your backend does not use HTTPS redirection (Vercel handles HTTPS).
-- If you need environment variables, set them in Vercel dashboard.
-- For local development, run frontend and backend separately.
+This will automatically trigger the dual deployment workflow defined in `.github/workflows/dual-deploy.yml`.
 
-## Deploy
-1. Push your code to GitHub.
-2. Connect your repo to Vercel.
-3. Deploy!
+### Step 2: Verify GitHub Actions Workflow
 
----
-For advanced configuration, see [Vercel docs](https://vercel.com/docs).
+1. Go to your GitHub repository
+2. Click on the "Actions" tab
+3. You should see the "Dual Deployment (GitHub Pages & Vercel)" workflow running
+4. Wait for it to complete (both jobs should show green checkmarks)
+
+### Step 3: Check GitHub Pages Deployment
+
+1. Go to your GitHub repository
+2. Click on "Settings" > "Pages"
+3. You should see that your site is published at https://uploadsoulzhgrain.github.io/uploadsoul.github.io
+4. If you've configured a custom domain, it will be shown here
+
+### Step 4: Verify Vercel Deployment
+
+1. Log in to your Vercel account
+2. Go to your project dashboard
+3. Check the latest deployment status
+4. Click on "Visit" to access the deployed site
+
+## Setting up Custom Domains
+
+### GitHub Pages Custom Domain
+
+1. Go to your repository settings
+2. Navigate to "Pages"
+3. Under "Custom domain", enter your domain (e.g., `uploadsoul.com`)
+4. Save
+5. Configure your domain's DNS settings to point to GitHub Pages:
+   - Add an A record pointing to the GitHub Pages IP addresses: 
+     - 185.199.108.153
+     - 185.199.109.153
+     - 185.199.110.153
+     - 185.199.111.153
+   - Or add a CNAME record for `www` pointing to `<username>.github.io`
+
+### Vercel Custom Domain
+
+1. Go to your Vercel project
+2. Click on "Settings" > "Domains"
+3. Add your domain
+4. Follow the instructions provided by Vercel to configure your DNS settings
+
+## Troubleshooting
+
+### Common Issues
+
+1. **Build failures**:
+   - Check the build logs in GitHub Actions or Vercel
+   - Ensure all dependencies are correctly specified in package.json
+
+2. **Routing issues**:
+   - Ensure the vercel.json file has the correct routes configuration
+   - For GitHub Pages, make sure the 404.html redirect is working
+
+3. **Custom domain not working**:
+   - Verify DNS settings are correct and propagated (can take up to 48 hours)
+   - Check that the CNAME file exists in the repository
+
+4. **Environment variables**:
+   - Make sure all necessary environment variables are set in Vercel
+   
+### Manual Deployment (if automation fails)
+
+#### GitHub Pages Manual Deploy
+
+```bash
+# Build the project
+pnpm run build
+
+# Create CNAME file if needed
+echo "uploadsoul.com" > dist/CNAME
+
+# Deploy the dist folder to gh-pages branch
+git add dist -f
+git commit -m "Deploy to GitHub Pages"
+git subtree push --prefix dist origin gh-pages
+```
+
+#### Vercel Manual Deploy
+
+```bash
+# Install Vercel CLI
+pnpm add -g vercel
+
+# Login to Vercel (first time only)
+vercel login
+
+# Deploy to production
+vercel --prod
+```
+
+## Verifying Successful Deployment
+
+After deployment, test the following features:
+
+1. General navigation across all pages
+2. Digital Human creation functionality 
+3. Digital Rebirth features
+4. Responsive design on multiple devices
+5. Any API integrations
+
+If any issues are found, check the console logs for errors and review the deployment configuration.
