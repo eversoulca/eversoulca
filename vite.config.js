@@ -12,6 +12,7 @@ export default defineConfig({
       manifest: {
         name: 'UploadSoul',
         short_name: 'UploadSoul',
+        id: '/',
         start_url: '/',
         scope: '/',
         display: 'standalone',
@@ -32,7 +33,7 @@ export default defineConfig({
         screenshots: [
           {
             src: "/screenshot-mobile.png",
-            sizes: "300x600",
+            sizes: "360x720",
             type: "image/png"
           },
           {
