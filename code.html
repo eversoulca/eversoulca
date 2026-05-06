@@ -1,0 +1,274 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>EVERSOUL TECHNOLOGIES INC. | Engineering the Intelligence of Tomorrow</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Space+Grotesk:wght@500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#373942",
+                        "surface-container": "#1d1f27",
+                        "background": "#11131b",
+                        "secondary-fixed-dim": "#4edea3",
+                        "primary-container": "#2563eb",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "secondary-fixed": "#6ffbbe",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed": "#360f00",
+                        "on-tertiary-container": "#ffede6",
+                        "secondary-container": "#00a572",
+                        "error-container": "#93000a",
+                        "on-surface-variant": "#c3c6d7",
+                        "primary-fixed": "#dbe1ff",
+                        "inverse-on-surface": "#2e3039",
+                        "surface-container-lowest": "#0c0e16",
+                        "surface-container-low": "#191b23",
+                        "secondary": "#4edea3",
+                        "surface-dim": "#11131b",
+                        "tertiary-container": "#bc4800",
+                        "tertiary-fixed": "#ffdbcd",
+                        "on-secondary-fixed-variant": "#005236",
+                        "inverse-primary": "#0053db",
+                        "surface-container-highest": "#32343d",
+                        "surface-tint": "#b4c5ff",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#282a32",
+                        "on-primary-fixed": "#00174b",
+                        "surface-variant": "#32343d",
+                        "primary": "#b4c5ff",
+                        "on-primary": "#002a78",
+                        "inverse-surface": "#e1e2ed",
+                        "error": "#ffb4ab",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-secondary-container": "#00311f",
+                        "on-secondary": "#003824",
+                        "on-primary-container": "#eeefff",
+                        "outline-variant": "#434655",
+                        "outline": "#8d90a0",
+                        "on-surface": "#e1e2ed",
+                        "tertiary": "#ffb596",
+                        "on-tertiary": "#581e00",
+                        "surface": "#11131b",
+                        "on-secondary-fixed": "#002113",
+                        "on-background": "#e1e2ed"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "xl": "48px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "container-max": "1280px",
+                        "xs": "4px",
+                        "gutter": "24px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Inter"],
+                        "body-md": ["Inter"],
+                        "h1": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-caps": ["Space Grotesk"],
+                        "h2": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h3": ["24px", {"lineHeight": "1.3", "letterSpacing": "0", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(26, 26, 26, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .machined-edge {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 1) 0%, rgba(10, 10, 10, 1) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-white/5">
+<div class="flex justify-between items-center h-20 px-lg max-w-container-max mx-auto">
+<div class="font-h2 text-h2 font-bold text-on-background tracking-tight">
+                EVERSOUL TECHNOLOGIES INC.
+            </div>
+<div class="hidden md:flex items-center space-x-lg">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md hover:bg-surface-bright/10 transition-all duration-300 px-md py-sm rounded" href="#">Solutions</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md hover:bg-surface-bright/10 transition-all duration-300 px-md py-sm rounded" href="#">Projects</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md hover:bg-surface-bright/10 transition-all duration-300 px-md py-sm rounded" href="#">Hardware</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-lg py-md rounded-lg font-body-md text-body-md font-semibold scale-95 active:scale-90 transition-transform">
+                Contact
+            </button>
+</div>
+</nav>
+<main class="flex-grow pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[80vh] flex items-center px-lg py-xl border-b border-white/5 overflow-hidden">
+<!-- Background Image Area -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-30 mix-blend-luminosity" data-alt="A highly detailed, cinematic 3D abstract glassmorphism rendering. Floating, frosted glass monolithic structures hover over a dark, obsidian-like technological landscape. Soft, diffused hyper-blue and slate lighting reflects off the perfectly smooth, engineered surfaces, creating a mood of advanced enterprise infrastructure and cutting-edge artificial intelligence processing power. High resolution, architectural precision, deep shadows, and subtle reflections evoke a premium command center atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPh9aFYIy7rj_OYCQWb4AR3Mgw7LI31CCJaW585mroXQP01WlzFhaOdX-Gga-8WWCWy2VmGDIf1bPrGP9jypRx-Jze9cIHKEpLKRx5TzA5_CMBTcf--f0iD_xIa42a3XEPnsOci1O_capC8JU6ZH4G5lU5QpH2SyxWfmRFFqBNHHl9LidgD6-2Zv0o-uRMWpIMvKzRRBq7E1mlFXbeWV5LXpQ548HUzk33qhErmsXcMk1VEzqzv3RqTDp9H1igbHRan3QvMCAs6p3K">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
+</div>
+<div class="max-w-container-max mx-auto w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-8 space-y-lg">
+<div class="inline-flex items-center space-x-sm bg-surface-container/50 border border-white/5 rounded-full px-md py-xs glass-panel">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Vancouver HQ • Global Infrastructure</span>
+</div>
+<h1 class="font-h1 text-h1 text-on-background">
+                        Engineering the <br>
+<span class="text-primary">Intelligence of Tomorrow.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                        Based in Vancouver, Eversoul Technologies provides cutting-edge AI solutions and infrastructure for the global enterprise. We build the foundational layers that power next-generation computing.
+                    </p>
+<div class="pt-md flex space-x-md">
+<button class="bg-primary-container text-on-primary-container px-lg py-md rounded-DEFAULT font-body-md text-body-md font-semibold hover:bg-primary-container/90 transition-colors">
+                            View Projects
+                        </button>
+<button class="border border-outline-variant text-on-background px-lg py-md rounded-DEFAULT font-body-md text-body-md hover:bg-surface-container transition-colors">
+                            Learn More
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Solutions Grid -->
+<section class="py-xl px-lg bg-surface-container-lowest border-b border-white/5">
+<div class="max-w-container-max mx-auto space-y-xl">
+<div class="space-y-sm">
+<h2 class="font-h2 text-h2 text-on-background">Core Architecture</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">Comprehensive infrastructure-as-a-service layers designed for scale, security, and uncompromising performance.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Card 1 -->
+<div class="machined-edge rounded-lg p-lg group hover:bg-surface-container/50 transition-all duration-300">
+<div class="w-12 h-12 bg-surface-bright/20 rounded-DEFAULT flex items-center justify-center mb-md border border-white/5">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: &quot;FILL&quot; 0;">robot_2</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-background mb-sm">Digital Humans</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Multimodal interactive agents built on advanced neural architectures for seamless human-computer interaction.</p>
+</div>
+<!-- Card 2 -->
+<div class="machined-edge rounded-lg p-lg group hover:bg-surface-container/50 transition-all duration-300">
+<div class="w-12 h-12 bg-surface-bright/20 rounded-DEFAULT flex items-center justify-center mb-md border border-white/5">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: &quot;FILL&quot; 0;">memory</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-background mb-sm">Compute &amp; Cloud</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">High-performance GPU and compute provisioning. Scalable, secure, and optimized for intensive ML workloads.</p>
+</div>
+<!-- Card 3 -->
+<div class="machined-edge rounded-lg p-lg group hover:bg-surface-container/50 transition-all duration-300">
+<div class="w-12 h-12 bg-surface-bright/20 rounded-DEFAULT flex items-center justify-center mb-md border border-white/5">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: &quot;FILL&quot; 0;">code_blocks</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-background mb-sm">Custom Software</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Tailored AI-driven applications engineered specifically for your enterprise data and operational workflows.</p>
+</div>
+<!-- Card 4 -->
+<div class="machined-edge rounded-lg p-lg group hover:bg-surface-container/50 transition-all duration-300">
+<div class="w-12 h-12 bg-surface-bright/20 rounded-DEFAULT flex items-center justify-center mb-md border border-white/5">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: &quot;FILL&quot; 0;">router</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-background mb-sm">Strategic Procurement</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Sourcing and deploying enterprise-grade hardware for robust AI and high-throughput networking environments.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Spotlight: SDS Management System -->
+<section class="py-xl px-lg bg-background">
+<div class="max-w-container-max mx-auto">
+<div class="bg-surface-container-low rounded-xl border border-secondary/20 overflow-hidden grid grid-cols-1 lg:grid-cols-2">
+<div class="p-xl flex flex-col justify-center space-y-lg relative">
+<!-- Accent Glow -->
+<div class="absolute top-0 left-0 w-full h-full bg-secondary/5 pointer-events-none"></div>
+<div class="inline-flex items-center space-x-sm">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider">Spotlight Platform</span>
+</div>
+<h2 class="font-h2 text-h2 text-on-background">Enterprise Compliance: SDS Management Redefined</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Our flagship structured data platform for Chemical Safety Data Sheets. Built for scale and fully compliant with global regulatory standards including GHS, OSHA, and WHMIS.
+                        </p>
+<ul class="space-y-md font-body-md text-body-md text-on-surface">
+<li class="flex items-center space-x-md">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: &quot;FILL&quot; 0;">check_circle</span>
+<span class="">Multi-tenant Architecture</span>
+</li>
+<li class="flex items-center space-x-md">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: &quot;FILL&quot; 0;">check_circle</span>
+<span class="">AI-Enhanced Data Extraction</span>
+</li>
+<li class="flex items-center space-x-md">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: &quot;FILL&quot; 0;">check_circle</span>
+<span class="">Automated Compliance Reporting</span>
+</li>
+</ul>
+<div class="pt-sm">
+<button class="bg-[#00a572] text-[#eeefff] px-lg py-md rounded-DEFAULT font-body-md text-body-md font-semibold hover:bg-[#00a572]/90 transition-colors flex items-center space-x-sm">
+<span class="">Launch SDS Platform</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: &quot;FILL&quot; 0;">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- SDS Visual -->
+<div class="relative bg-surface-container border-l border-white/5 p-lg flex items-center justify-center">
+<div class="w-full h-full rounded-lg overflow-hidden border border-white/10 glass-panel relative">
+<img class="w-full h-full object-cover opacity-60 mix-blend-luminosity" data-alt="A highly detailed 3D render of a futuristic dashboard interface floating in a dark obsidian void. The dashboard displays complex structured data grids and compliance metrics, illuminated by sharp cyber-emerald and slate blue accents. The visual style is enterprise-grade, clean, and highly technical, representing a secure chemical safety data sheet management system. Deep shadows and subtle glassmorphism effects give depth to the UI panels." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQBHoMsYTeYpiVxdCOCM23x5NjMm1skyWYwJ_fZhaAaFW2xWmiem4PzZRcPDlKykHojm36EiDqInqqz5RBTce7CbPTbv8W30flCYDnO-sX8FSHJjnT3UqLJgePjAKT9waCPegBg0fVePua5rnoTRH14qnDTlrwMNwFMMpU7IFR92ASA3z_Oi4jJnwV6MWXBQ16VpUk5-7Ak8muq_YZwossSQyfdvz6aAVOx28bYFig0O_ilLIHidAGT-VdM40yhypm7D2bq0s2327i">
+<div class="absolute inset-0 bg-gradient-to-tr from-surface-container-lowest/80 to-transparent"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest pt-xl pb-lg border-t border-outline-variant mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-lg px-lg max-w-container-max mx-auto">
+<div class="md:col-span-1 space-y-md">
+<div class="font-h3 text-h3 font-semibold text-on-surface">
+                    EVERSOUL TECHNOLOGIES INC.
+                </div>
+<p class="font-body-md text-body-md text-outline-variant opacity-80">
+                    © 2025 EVERSOUL TECHNOLOGIES INC. Vancouver HQ. All rights reserved.
+                </p>
+</div>
+<div class="md:col-span-3 flex flex-col md:flex-row md:justify-end gap-lg">
+<a class="font-body-md text-body-md text-outline hover:text-on-surface transition-colors hover:underline decoration-secondary underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-outline hover:text-on-surface transition-colors hover:underline decoration-secondary underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-outline hover:text-on-surface transition-colors hover:underline decoration-secondary underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="#">Compliance</a>
+<a class="font-body-md text-body-md text-outline hover:text-on-surface transition-colors hover:underline decoration-secondary underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="#">GHS/OSHA/WHMIS</a>
+</div>
+</div>
+</footer>
+
+
+</body></html>
